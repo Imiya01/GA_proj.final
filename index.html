@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+  <h1 class="title">Blog Search</h1></div>
+  <div><input class="center" placeholder= "Search by Title"type="text" name="searchbar" id="searchbar"></div>
+  <div>
+  <h1>User DB</h1>
+
+<form id="form">
+  <input type = "text" placeholder = "name" id="nameField">
+  <input type = "text" placeholder = "age" id="ageField">
+  <button type="submit" value="Submit">Submit</button>
+</form>
+
+<button id="readDataBtn">Read Data</button>
+
+<button onclick="updateData()">Mess with data</button>
+</div>
+  <ul class="subtitles">
+      <li class="blog-title">Blog Selection</li>
+      <!---<li class="source-title">Source</li>-->
+  </ul>
+  <div class="datum"></div>
+</body>
+<script type="module" src="js/firebase.js" type="module"></script>
+<script src="js/main01.js"></script>
+</html>
