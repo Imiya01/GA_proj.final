@@ -27,18 +27,33 @@ const db = getDatabase();
 // delta.addEventListener('submit', writeUserData);
 // }
 
-document.getElementById('form').addEventListener('submit', writeUserData);
-// 
+document.getElementById('submit').addEventListener('click', writeUserData);
+// // 
+
+// function writeUserData(event) {
+//   event.preventDefault();
+//   console.log(document.getElementById('nameField').value);
+//   const reference = ref(db, 'users/');
+//   set(reference, {
+//     nameField: document.getElementById('nameField').value,
+//     ageField: document.getElementById('ageField').value,
+//   });
+// }
+
 
 function writeUserData(event) {
   event.preventDefault();
-  console.log(document.getElementById('nameField').value);
+  const selectedReview = reviewArray;
+  const nameField = document.getElementById('nameField').value;
+  const ageField = document.getElementById('ageField').value;
   const reference = ref(db, 'users/');
   set(reference, {
-    nameField: document.getElementById('nameField').value,
-    ageField: document.getElementById('ageField').value,
+      selectedReview,
+      nameField,
+      ageField,
   });
 }
+
 
 function getData() {
   const userRef = ref(db, 'users');

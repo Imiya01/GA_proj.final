@@ -6,18 +6,19 @@ getdata();
 
 function getdata() {
     fetch( 
-    'https://api.mediastack.com/v1/news?access_key=bff3a86eb00042ed68258f5c86a6318d'
+        'https://api.mediastack.com/v1/news?access_key=bff3a86eb00042ed68258f5c86a6318d'
   )
     .then((response) => {
       const data = response.json();
       return data;
     })
     .then((data) => {
+        // for (let i = 0; i < data.length; i++) {
+        //     document.getElementById('blogTitles').innerHTML += `<li>${getBlogs[i].title}</li>`;
+        // }
+        
         dataStore = data.data;
         datum.innerHTML = getHTML(data.data);
-        document.getElementById('submitComment').addEventListener('click', writeUserData);
-
-          
     });
 }
 
@@ -26,8 +27,8 @@ function getHTML(data){
 }
 
 function generateHTML(title, url, source){
-    return `<div class="datapiece"><h1 class= "link"> <p> Link</p> <a> ${url} </a> </h1><h1 class= "link"> <p> Title </p> ${title}</h1><h1 class= "link"> <p> Source</p> ${source}</h1>
-        </div>`;
+    return `<div class="datapiece"><h1 class= "link"> <p> Link</p> <a ${url}></a> </h1><h1 class= "link"> <p> Title </p> <span id='blogTitle'>${title}</span></h1><h1 class= "link"> <p> Source</p> ${source}</h1>
+    <p id="blogTitles"></p> </div>`;
 }
 
 function noResultHTML(){
