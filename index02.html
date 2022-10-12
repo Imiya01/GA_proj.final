@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body>
+  <h1 class="title">Article Search</h1></div>
+<div>
+  <h3 class="text">Overview</h3>
+  <p class="text">Search for an article by title, then leave a review with a User ID in the search section and save</p>
+  <p class="text">Refresh the page after save topdate your save, delete or update your comment in the Manage section</p>
+    <p class="text">
+    Currently we only support 1 user ID and review at a time!
+  </p>
+  <br>
+  <h4 class="text">Search for article. Click on title to select<h4>
+  <input class="center" placeholder= "Search by article title" type="text" name="searchbar" id="searchbar">
+
+  <h4 class="text">Save article title and review. Add by User ID</h4>
+  <input style="color:black" id="userID" type="text" placeholder="Add your User ID"> 
+    <input style="color:black" type="text" placeholder="Article title" id="selectedReview">
+    <input style="color:black" type="text" placeholder="Add your review" id="rating">
+</div>
+<div>
+  <br>
+  <button style="color:black" type="submit" value="Submit" id="submit">Save review</button> 
+</div>
+<div>
+  <br>
+  <h4 class="text">Manage your saved review</h4>
+  <input  style="color:black" type="text" id="retrieveReview" placeholder="Add your User ID">
+  <input style="color:black" type="text" placeholder="Update your review here" id="updateRating">
+  <br><br>
+  <div>
+  <button style="color:black" id="readDataBtn">Find review</button>
+  <button style="color:black" id="delete">Delete review</button>
+  <button style="color:black" id="update">Update review</button>
+</div>
+  <h3 id="findID" type="text"></h3> 
+  <h3 id="findRating" type="text"></h3> 
+  <br><br>
+  </div>
+
+  <ul class="subtitles">
+      <li class="blog-title">Article Selection</li>
+  </ul>
+
+  <div class="datum"></div>
+  
+  
+</body>
+<script type="module" src="js/firebase01.js"></script>
+<script src="js/main04.js"></script>
+
+
+</html>
+
