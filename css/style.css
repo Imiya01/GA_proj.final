@@ -27,12 +27,12 @@ body {
   color: rgb(41, 35, 35);
 }
 #searchbar {
-  margin-left: 80%;
-  margin-bottom: 5em;
+  margin-right: 80%;
+  margin-bottom: 1em;
   background-color: #f1e4e4;
   outline: none;
   border: white solid 1px;
-  padding: 1em;
+  padding: 0.2em;
   color: rgb(10, 1, 1);
   font-size: 1rem;
   font-weight: bold;
@@ -80,4 +80,20 @@ li {
 
 .rating:hover a {
   opacity: 100%;
+}
+
+.reviewTitle  {
+  background-color: red;
+}
+
+.reviewTitle:focus {     
+  background-color:yellow;    
+}
+
+.text {
+  text-align: left;
+  font-size: 1rem;
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+  color: rgb(41, 35, 35);
 }

@@ -3,7 +3,6 @@ let searchbar = document.getElementById('searchbar');
 let dataStore = [];
 let firebaseData = {};
 let rating = document.querySelectorAll('.rating a');
-const reviewArray = [];
 
 getdata();
 
@@ -23,12 +22,6 @@ function getdata() {
 }
 
 
-
-function updateData() {
-    // console.log('mess with data here:', firebaseData);
-    // update data here
-}
-
 function getHTML(data) {
     return data
         .map(({ title, url, source }) => generateHTML(title, url, source))
@@ -36,7 +29,7 @@ function getHTML(data) {
 }
 
 function selectReview(e) {
-     reviewArray.push(e.target.innerText);
+    document.getElementById('selectedReview').value = e.target.innerText;
 }
 
 function generateHTML(title, url, source) {
@@ -44,15 +37,13 @@ function generateHTML(title, url, source) {
     return `<div class="datapiece">
     <h1 class= "link"> 
     <p> Link</p> <a href='${url}'> See more </a> </h1>
-    <h1 class= "link"> <p> Title </p> 
-    <span class='reviewTitle' onclick='selectReview(event)'>${title}</span></h1>
-    <h1 class= "link"> <p> Source</p> ${source}</h1>
-        </div>
-        <div class="rating"><a>👍</a> <form id="form">
-        <input type = "text" placeholder = "name" id="nameField">
-  <input type="text" placeholder="age" id="ageField"></form></div>`;
+    <h1 class= "link"> 
+    <p> Click on the title below to select, then add comment in the review section above</p> <span class='rating' onclick='selectReview(event)'><a>${title}</a> </span>
+    </h1>
+    <h1 class= "link"> 
+    <p> Source</p> ${source}</h1>
+        </div>`;
 }
-
 
 
 function noResultHTML() {
