@@ -28,22 +28,11 @@ document.getElementById('readDataBtn').addEventListener('click', getData);
 document.getElementById('update').addEventListener('click', updateData);
 document.getElementById('delete').addEventListener('click', deleteData);
 
-// function writeUserData(event) {
-//   event.preventDefault();
-//   const selectedReview = reviewArray;
-//   const userID = document.getElementById('userID').value;
-//   const reference = ref(db, 'Reviewers/' + userID);
-//   set(reference, {
-//       selectedReview,
-//   });
-// }
-
 
 function writeUserData(event) {
   event.preventDefault();
   const selectedReview = document.getElementById('selectedReview').value;
   const rating = document.getElementById('rating').value;
-  console.log(selectedReview);
   const reference = ref(db, 'Reviewers/');
   set(reference, {
       selectedReview,
